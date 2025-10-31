@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full Circle Merch | Done-For-You YouTube Merch Service</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --color-primary: #0077c9; /* Blue */
             --color-dark: #1a1a1a;
             --color-light: #ffffff;
             --color-gray: #f4f4f4;
-            --font-family-sans: 'Inter', sans-serif;
+            /* SAFE, UNIVERSAL FONT STACK */
+            --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
         body {
@@ -143,6 +144,8 @@
             padding: 30px 10px;
             border-radius: 8px;
             border: 2px solid var(--color-primary);
+            background-color: var(--color-dark); /* Ensure background stays dark */
+            color: var(--color-light);
         }
 
         .step-card h3 {
@@ -153,6 +156,7 @@
         
         .step-card p {
             font-size: 1.1rem;
+            color: #ccc; /* Slightly lighter text for readability */
         }
 
         /* --- Mockups (Placeholder for Images) --- */
@@ -185,6 +189,9 @@
             font-weight: 600;
             color: var(--color-primary);
             border-radius: 8px;
+            /* Zen Border Effect */
+            box-shadow: inset 0 0 0 2px var(--color-primary); 
+            background-color: #e5e5e5;
         }
 
         /* --- Partnership Details --- */
@@ -315,12 +322,12 @@
 
                 <div class="step-card">
                     <h3>Step 2: The Launch 🚀</h3>
-                    <p>We handle all technical setup on a top-tier platform (Fourthwall), create professional mockups, and integrate the store seamlessly into your YouTube page.</p>
+                    <p>We handle all technical setup on the Fourthwall platform, create professional mockups, and integrate the store seamlessly into your YouTube page.</p>
                 </div>
                 
                 <div class="step-card">
                     <h3>Step 3: The Profit 💰</h3>
-                    <p>Your fans buy. We handle the production, shipping, and customer support globally. **You get paid your 70% profit cut**—automatically.</p>
+                    <p>You drop a link, your fans buy the merch, and we handle the rest. You get paid your **70% cut** automatically.</p>
                 </div>
             </div>
         </div>
