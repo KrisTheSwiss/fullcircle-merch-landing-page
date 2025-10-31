@@ -6,11 +6,15 @@
     <title>Full Circle Merch | Done-For-You YouTube Merch Service</title>
     
     <style>
+        /* CSS RESET FOR UNIVERSAL CONSISTENCY */
+        * { box-sizing: border-box; }
+        body, h1, h2, h3, p { margin: 0; padding: 0; }
+
         :root {
             --color-primary: #0077c9; /* Blue */
             --color-dark: #1a1a1a;
             --color-light: #ffffff;
-            --color-gray: #e8e8e8; /* Simplified gray */
+            --color-gray: #f4f4f4; /* Light gray for background */
             /* Universal Font Stack */
             --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
@@ -18,11 +22,10 @@
         body {
             font-family: var(--font-family-sans);
             color: var(--color-dark);
-            margin: 0;
-            padding: 0;
             background-color: var(--color-light);
-            line-height: 1.5; /* Adjusted for readability */
-            font-size: 16px; /* Explicit base font size */
+            line-height: 1.6;
+            font-size: 16px;
+            min-height: 100vh;
         }
 
         .container {
@@ -32,24 +35,25 @@
         }
 
         .section {
-            padding: 60px 0; /* Slightly reduced padding */
+            padding: 80px 0;
+            overflow: hidden; /* Clear floats/margins */
         }
 
         /* --- Typography --- */
         h1, h2, h3 {
             font-weight: 700;
             line-height: 1.1;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         h1 {
-            font-size: 3rem; /* Slightly reduced for a cleaner look */
+            font-size: 3rem;
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         h3 {
@@ -61,41 +65,41 @@
         /* --- Buttons --- */
         .cta-button {
             display: inline-block;
-            padding: 12px 25px; /* Slightly refined padding */
+            padding: 14px 30px;
             background-color: var(--color-primary);
             color: var(--color-light) !important;
             text-decoration: none;
             font-weight: 600;
             border-radius: 6px;
             transition: background-color 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0, 119, 201, 0.2);
-            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 119, 201, 0.3);
+            font-size: 1.05rem;
         }
 
         .cta-button:hover {
-            background-color: #005a9b; /* Darker blue on hover */
+            background-color: #005a9b;
         }
 
         /* --- Hero Section --- */
         #hero {
             background-color: var(--color-gray);
             text-align: center;
-            padding: 80px 0;
+            padding: 100px 0;
         }
 
         #hero h1 {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         #hero p {
-            font-size: 1.15rem;
-            margin-bottom: 30px;
-            max-width: 700px;
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* --- Features Section --- */
+        /* --- Features Section (Grid) --- */
         #features {
             text-align: center;
         }
@@ -103,28 +107,28 @@
         .feature-grid {
             display: flex;
             justify-content: space-between;
-            gap: 25px;
+            gap: 30px;
             flex-wrap: wrap;
         }
 
         .feature-card {
             flex: 1;
-            min-width: 250px;
-            padding: 25px;
+            min-width: 280px;
+            padding: 30px;
             border: 1px solid #ddd;
-            border-radius: 6px;
+            border-radius: 8px;
             background-color: var(--color-light);
             text-align: left;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
 
         .icon {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--color-primary);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         
-        /* --- Process Section --- */
+        /* --- Process Section (Dark) --- */
         #process {
             background-color: var(--color-dark);
             color: var(--color-light);
@@ -138,25 +142,25 @@
         .process-steps {
             display: flex;
             justify-content: space-between;
-            gap: 25px;
-            margin-top: 30px;
+            gap: 30px;
+            margin-top: 40px;
             flex-wrap: wrap;
         }
         
         .step-card {
             flex: 1;
             min-width: 200px;
-            padding: 25px 15px;
-            border-radius: 6px;
-            border: 1px solid var(--color-primary);
-            background-color: var(--color-dark);
+            padding: 30px 20px;
+            border-radius: 8px;
+            border: 2px solid var(--color-primary);
+            background-color: #2a2a2a; /* Slightly lighter than dark for contrast */
             color: var(--color-light);
         }
 
         .step-card h3 {
             color: var(--color-primary);
-            font-size: 1.5rem;
-            margin-bottom: 5px;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
         }
         
         .step-card p {
@@ -164,16 +168,17 @@
             color: #b0b0b0;
         }
 
-        /* --- Mockups (Placeholder for Images) --- */
+        /* --- Mockups Section --- */
         #mockups {
             text-align: center;
+            padding-bottom: 40px; /* Reduce bottom padding */
         }
         
         .mockup-grid {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
+            gap: 40px;
+            margin-top: 50px;
             flex-wrap: wrap;
         }
         
@@ -184,11 +189,11 @@
         }
 
         .placeholder-box {
-            height: 200px;
+            height: 220px;
             width: 100%;
-            background-color: #d0d0d0;
+            background-color: #e5e5e5;
             border: 1px solid var(--color-dark);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -196,7 +201,7 @@
             font-weight: 600;
             color: var(--color-primary);
             border-radius: 6px;
-            box-shadow: inset 0 0 0 2px var(--color-primary); 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         /* --- Partnership Details --- */
@@ -205,29 +210,29 @@
         }
 
         .detail-card-wrapper {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .detail-card {
             display: flex;
             background-color: var(--color-light);
-            margin-bottom: 15px;
-            padding: 20px;
-            border-radius: 6px;
-            align-items: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 25px;
+            border-radius: 8px;
+            align-items: flex-start;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .detail-card .icon {
-            font-size: 2.5rem;
-            margin-right: 20px;
+            font-size: 2rem;
+            margin-right: 25px;
             flex-shrink: 0;
         }
 
         .detail-card h3 {
             color: var(--color-dark);
-            margin-bottom: 3px;
+            margin-bottom: 5px;
         }
 
         .detail-card p {
@@ -238,7 +243,7 @@
         /* --- Footer --- */
         #contact {
             text-align: center;
-            padding: 40px 0;
+            padding: 50px 0;
             border-top: 1px solid #ddd;
         }
 
@@ -250,10 +255,10 @@
         /* --- Media Queries for Responsiveness --- */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
-            h2 {
-                font-size: 1.75rem;
+            .section {
+                padding: 50px 0;
             }
             .feature-grid, .process-steps, .mockup-grid {
                 flex-direction: column;
@@ -266,6 +271,9 @@
             .detail-card .icon {
                 margin-right: 0;
                 margin-bottom: 10px;
+            }
+            .detail-card p {
+                text-align: center;
             }
         }
     </style>
@@ -385,7 +393,7 @@
         </div>
     </section>
 
-    <footer id="contact">
+    <footer id="contact" class="section">
         <div class="container">
             <p>Ready to unlock a new, stable revenue stream? Stop leaving money on the table.</p>
             <a href="mailto:partnerships@fullcirclemerch.com" class="cta-button">Let's Discuss Your Channel Today</a>
