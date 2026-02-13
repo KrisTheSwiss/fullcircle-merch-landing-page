@@ -3,405 +3,450 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Circle Merch | Done-For-You YouTube Merch Service</title>
-    
+    <title>Full Circle Merch | Done-For-You Creator Commerce</title>
     <style>
-        /* CSS RESET FOR UNIVERSAL CONSISTENCY */
-        * { box-sizing: border-box; }
-        body, h1, h2, h3, p { margin: 0; padding: 0; }
-
+        /* --- RESET & BASICS --- */
         :root {
-            --color-primary: #0077c9; /* Blue */
-            --color-dark: #1a1a1a;
-            --color-light: #ffffff;
-            --color-gray: #f4f4f4; /* Light gray for background */
-            /* Universal Font Stack */
-            --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --bg-color: #0a0a0a;
+            --text-color: #f0f0f0;
+            --accent-red: #E63946; /* Matches the red line in your logo */
+            --gray-dark: #1a1a1a;
+            --gray-light: #888;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: var(--font-family-sans);
-            color: var(--color-dark);
-            background-color: var(--color-light);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
             line-height: 1.6;
-            font-size: 16px;
-            min-height: 100vh;
+            overflow-x: hidden;
         }
 
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 3.5rem; margin-bottom: 1.5rem; }
+        h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        p { margin-bottom: 1.5rem; color: #ccc; max-width: 60ch; }
+
+        .text-accent { color: var(--accent-red); }
+        .center-text { text-align: center; }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background-color: #fff;
+            color: #000;
+            font-weight: 600;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.9rem;
+            border: 1px solid #fff;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: #fff;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid #333;
+        }
+
+        .btn-outline:hover {
+            border-color: #fff;
+        }
+
+        /* --- LAYOUT UTILITIES --- */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        .section {
-            padding: 80px 0;
-            overflow: hidden;
-        }
-
-        /* --- Typography --- */
-        h1, h2, h3 {
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: 3rem;
-        }
-
-        h2 {
-            font-size: 2.2rem;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        h3 {
-            font-size: 1.4rem;
-            color: var(--color-primary);
-            margin-top: 0;
-        }
-        
-        /* --- Buttons --- */
-        .cta-button {
-            display: inline-block;
-            padding: 14px 30px;
-            background-color: var(--color-primary);
-            color: var(--color-light) !important;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 6px;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 119, 201, 0.3);
-            font-size: 1.05rem;
-        }
-
-        .cta-button:hover {
-            background-color: #005a9b;
-        }
-
-        /* --- Hero Section --- */
-        #hero {
-            background-color: var(--color-gray);
-            text-align: center;
+        section {
             padding: 100px 0;
+            border-bottom: 1px solid #222;
         }
 
-        #hero h1 {
-            margin-bottom: 10px;
-        }
-
-        #hero p {
-            font-size: 1.25rem;
-            margin-bottom: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* --- Features Section (Grid) --- */
-        #features {
-            text-align: center;
-        }
-
-        .feature-grid {
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .feature-card {
-            flex: 1;
-            min-width: 280px;
-            padding: 30px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background-color: var(--color-light);
-            text-align: left;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-
-        .icon {
-            font-size: 2.5rem;
-            color: var(--color-primary);
-            margin-bottom: 15px;
-        }
-        
-        /* --- Process Section (Dark) --- */
-        #process {
-            background-color: var(--color-dark);
-            color: var(--color-light);
-            text-align: center;
-        }
-        
-        #process h2 {
-            color: var(--color-light);
-        }
-        
-        .process-steps {
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .step-card {
-            flex: 1;
-            min-width: 200px;
-            padding: 30px 20px;
-            border-radius: 8px;
-            border: 2px solid var(--color-primary);
-            background-color: #2a2a2a;
-            color: var(--color-light);
-        }
-
-        .step-card h3 {
-            color: var(--color-primary);
-            font-size: 1.6rem;
-            margin-bottom: 10px;
-        }
-        
-        .step-card p {
-            font-size: 1rem;
-            color: #b0b0b0;
-        }
-
-        /* --- Mockups Section --- */
-        #mockups {
-            text-align: center;
-            padding-bottom: 40px;
-        }
-        
-        .mockup-grid {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 50px;
-            flex-wrap: wrap;
-        }
-        
-        .mockup-item {
-            width: 300px;
-            text-align: center;
-            flex-shrink: 0;
-        }
-
-        .placeholder-box {
-            height: 220px;
+        /* --- HEADER / NAV --- */
+        header {
+            position: fixed;
+            top: 0;
             width: 100%;
-            background-color: #e5e5e5;
-            border: 1px solid var(--color-dark);
-            margin-bottom: 15px;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* CSS Recreation of your Logo */
+        .logo {
+            font-family: 'Montserrat', sans-serif; /* Similar geometric sans */
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 0.05em;
             display: flex;
             align-items: center;
-            justify-content: center;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .logo span {
+            display: inline-block;
+            width: 2px;
+            height: 24px;
+            background-color: var(--accent-red);
+            margin: 0 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .nav-links a:hover { color: #fff; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding-top: 180px;
+            padding-bottom: 140px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-sub {
+            font-size: 1.25rem;
+            color: #888;
+            margin-bottom: 2.5rem;
+        }
+
+        /* --- FEATURES GRID --- */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .card {
+            background: var(--gray-dark);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #222;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-red);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent-red);
+        }
+
+        /* --- THE SPLIT SECTION --- */
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .stat-box {
+            background: #fff;
+            color: #000;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 10px;
+            color: var(--accent-red);
+        }
+
+        .stat-label {
             font-size: 1.1rem;
             font-weight: 600;
-            color: var(--color-primary);
-            border-radius: 6px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            padding: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
-        /* --- Partnership Details --- */
-        #partnership {
-            background-color: var(--color-gray);
+        /* --- FAQ SECTION --- */
+        .faq-item {
+            border-bottom: 1px solid #333;
+            padding: 24px 0;
         }
 
-        .detail-card-wrapper {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .detail-card {
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 500;
+            cursor: pointer;
             display: flex;
-            background-color: var(--color-light);
-            margin-bottom: 20px;
-            padding: 25px;
-            border-radius: 8px;
-            align-items: flex-start;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .detail-card .icon {
-            font-size: 2rem;
-            margin-right: 25px;
-            flex-shrink: 0;
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: #999;
+            margin-top: 0;
         }
 
-        .detail-card h3 {
-            color: var(--color-dark);
-            margin-bottom: 5px;
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* Arbitrary large height */
+            margin-top: 16px;
         }
 
-        .detail-card p {
-            margin: 0;
-            font-size: 1rem;
-        }
+        .plus { font-weight: 300; font-size: 1.5rem; transition: 0.3s; }
+        .faq-item.active .plus { transform: rotate(45deg); color: var(--accent-red); }
 
-        /* --- Footer --- */
-        #contact {
+        /* --- FOOTER --- */
+        footer {
+            padding: 80px 0;
             text-align: center;
-            padding: 50px 0;
-            border-top: 1px solid #ddd;
+            border-top: 1px solid #222;
         }
 
-        #contact p {
-            margin-bottom: 25px;
-            font-size: 1.1rem;
+        .footer-logo {
+            margin-bottom: 20px;
+            justify-content: center;
         }
 
-        /* --- Media Queries for Responsiveness --- */
+        .email-link {
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-bottom: 2px solid var(--accent-red);
+            padding-bottom: 4px;
+        }
+
+        .email-link:hover {
+            color: var(--accent-red);
+        }
+
+        /* --- MOBILE --- */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-            .section {
-                padding: 50px 0;
-            }
-            .feature-grid, .process-steps, .mockup-grid {
-                flex-direction: column;
-                gap: 20px;
-            }
-            .detail-card {
-                flex-direction: column;
-                text-align: center;
-            }
-            .detail-card .icon {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-            .detail-card p {
-                text-align: center;
-            }
+            h1 { font-size: 2.5rem; }
+            .split-section { grid-template-columns: 1fr; }
+            .nav-links { display: none; } /* Simplified for demo */
+            .hero { padding-top: 140px; }
         }
     </style>
 </head>
 <body>
 
-    <header id="hero" class="section">
-        <div class="container">
-            <h1>Merch Made Simple. <span style="color: var(--color-primary);">All the Profit, None of the Headache.</span></h1>
-            <p>The done-for-you service for gaming creators. Launch a fully-managed, zero-inventory merch store today.</p>
-            <a href="mailto:partnerships@fullcirclemerch.com" class="cta-button">🚀 Launch My Store</a>
+    <header>
+        <div class="container nav-flex">
+            <a href="#" class="logo">
+                FULL CIRCLE <span></span> MERCH
+            </a>
+            <nav class="nav-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#earnings">Earnings</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
     </header>
 
-    <section id="features" class="section">
+    <section class="hero">
         <div class="container">
-            <h2>The True Benefits of a Full Circle Partnership</h2>
-            <div class="feature-grid">
-                
-                <div class="feature-card">
-                    <div class="icon">💸</div>
-                    <h3>Guaranteed Revenue Stream</h3>
-                    <p>Merch provides passive income that is **independent of AdSense/Sponsor instability**. Monetize your passionate audience directly, every single day.</p>
+            <div class="hero-content">
+                <h1 style="text-transform: uppercase;">
+                    The Merch Store<br>
+                    <span class="text-accent">You Don't Have Time</span> To Run.
+                </h1>
+                <p class="hero-sub">
+                    We build, manage, and scale official merchandise for gaming creators. 
+                    No inventory. No customer support. No friction.
+                    <br><br>
+                    You keep 70% of the profit. We do 100% of the work.
+                </p>
+                <a href="mailto:partnerships@fullcirclemerch.com" class="btn">Start Your Store</a>
+                <a href="#how-it-works" class="btn btn-outline" style="margin-left: 16px;">How It Works</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container">
+            <h2 class="center-text">Stop Leaving Money on the Table</h2>
+            <p class="center-text" style="margin: 0 auto 60px auto;">Most creators in the 50k-500k range are losing $2,000+ per month because they don't have the time to design, upload, and manage a store.</p>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">01</div>
+                    <h3>We Design</h3>
+                    <p>We analyze your channel culture and create premium, aesthetic designs your fans actually want to wear. No generic logos.</p>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="icon">🛡️</div>
-                    <h3>Zero Risk, Zero Cost</h3>
-                    <p>Forget minimum orders or warehouse space. We use print-on-demand (Fourthwall) so you pay **nothing upfront** and never hold any inventory.</p>
+                <div class="card">
+                    <div class="card-icon">02</div>
+                    <h3>We Build</h3>
+                    <p>We set up a fully custom storefront (via Fourthwall). We handle the domain, payment gateways, and shipping logistics.</p>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="icon">🗣️</div>
-                    <h3>Deepened Community Engagement</h3>
-                    <p>Merchandise is a physical badge of honor. Give your fans a way to represent your brand, build channel identity, and **strengthen the "Full Circle" bond**.</p>
+                <div class="card">
+                    <div class="card-icon">03</div>
+                    <h3>We Manage</h3>
+                    <p>We handle customer support, returns, and inventory. You get a monthly deposit and a transparent profit report.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="process" class="section">
+    <section id="earnings">
         <div class="container">
-            <h2>Your Journey to Passive Income</h2>
-            <div class="process-steps">
-                
-                <div class="step-card">
-                    <h3>Step 1: The Concept 💡</h3>
-                    <p>We research your channel's unique IP, memes, and aesthetic. Our design team creates a **small, hyper-relevant product line** that your fans will love.</p>
+            <div class="split-section">
+                <div>
+                    <h2>Simple Math.<br>Transparent Profit.</h2>
+                    <p>We don't believe in hidden fees or complex retainers. We operate on a pure performance model. If your merch doesn't sell, we don't get paid.</p>
+                    <ul style="margin-top: 24px; color: #ccc;">
+                        <li style="margin-bottom: 12px;">✓ Monthly Payouts</li>
+                        <li style="margin-bottom: 12px;">✓ Direct Stripe Integration</li>
+                        <li style="margin-bottom: 12px;">✓ Cancel Anytime Contracts</li>
+                    </ul>
                 </div>
-
-                <div class="step-card">
-                    <h3>Step 2: The Launch 🚀</h3>
-                    <p>We handle all technical setup on the Fourthwall platform, create professional mockups, and integrate the store seamlessly into your YouTube page.</p>
-                </div>
-                
-                <div class="step-card">
-                    <h3>Step 3: The Profit 💰</h3>
-                    <p>You drop a link, your fans buy the merch, and we handle the rest. You get paid your **70% cut** automatically.</p>
+                <div class="stat-box">
+                    <div class="stat-number">70%</div>
+                    <div class="stat-label">Your Take</div>
+                    <div style="font-size: 0.8rem; color: #666; margin-top: 10px;">(of Net Profit)</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="mockups" class="section">
+    <section id="faq">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="center-text" style="margin-bottom: 60px;">Questions We Get Asked</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Do I have to pay anything upfront?
+                    <span class="plus">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>No. We build the store, design the assets, and set everything up at our own cost. We only make money when you make a sale.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Who handles customer support?
+                    <span class="plus">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We do. We act as the "Merchant of Record" via Fourthwall. If a fan needs a size exchange or a refund, we handle the ticket. You never have to reply to a support email.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Do I own the designs?
+                    <span class="plus">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. All artwork we create for you belongs to you. If you decide to leave Full Circle Merch, you take your designs and your customer data with you.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Do I have approval rights?
+                    <span class="plus">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>100%. Nothing goes live on your store without your click of approval. We use a simple portal where you can approve designs in seconds.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" style="border-bottom: none;">
         <div class="container">
-            <h2>Our Merch Speaks Your Language</h2>
-            <p>We deliver sleek, high-quality designs that respect and amplify your brand, from strategy-focused apparel to narrative-driven accessories.</p>
-            <div class="mockup-grid">
-                
-                <div class="mockup-item">
-                    <div class="placeholder-box">MOCKUP: "Just One More Turn" Hoodie</div>
-                    <p>Minimalist apparel tailored to niche gaming genres.</p>
-                </div>
-                
-                <div class="mockup-item">
-                    <div class="placeholder-box">MOCKUP: "The Lore Master" Mug</div>
-                    <p>Drinkware featuring channel roles, lore, or catchphrases.</p>
-                </div>
-                
-                <div class="mockup-item">
-                    <div class="placeholder-box">MOCKUP: Simple Mascot Sticker/Mousepad</div>
-                    <p>Clean accessories for fans to customize their battle station.</p>
-                </div>
+            <div class="logo footer-logo">
+                FULL CIRCLE <span></span> MERCH
+            </div>
+            <h2 style="margin-bottom: 40px;">Ready to create your passive income stream?</h2>
+            <p style="margin: 0 auto 40px auto;">We are currently accepting partners in the Gaming niche with 50k+ subscribers.</p>
+            <a href="mailto:partnerships@fullcirclemerch.com" class="email-link">partnerships@fullcirclemerch.com</a>
+            
+            <div style="margin-top: 80px; color: #555; font-size: 0.8rem;">
+                &copy; 2025 Full Circle Merch. All rights reserved.
             </div>
         </div>
     </section>
 
-    <section id="partnership" class="section">
-        <div class="container">
-            <h2>The Clear, No-Risk Partnership Model</h2>
-            <div class="detail-card-wrapper">
+    <script>
+        // Simple FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentNode;
                 
-                <div class="detail-card">
-                    <div class="icon">✅</div>
-                    <div>
-                        <h3>Your Cut: 70% of Final Profit</h3>
-                        <p>You retain the vast majority of the profit. This is the net revenue after the base cost of the item and shipping is covered by the platform.</p>
-                    </div>
-                </div>
-                
-                <div class="detail-card">
-                    <div class="icon">⚖️</div>
-                    <div>
-                        <h3>Our Fee: A Simple 30% Service Split</h3>
-                        <p>We take 30% of the final profit for providing **full service:** initial design, product setup, inventory management, fulfillment, and customer support.</p>
-                    </div>
-                </div>
-                
-                <div class="detail-card">
-                    <div class="icon">🌍</div>
-                    <div>
-                        <h3>Global Fulfillment & Support</h3>
-                        <p>We leverage the Fourthwall platform to offer worldwide shipping and dedicated customer service. **You never touch a product or answer a shipping ticket.**</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                // Close others
+                document.querySelectorAll('.faq-item').forEach(child => {
+                    if (child !== parent) {
+                        child.classList.remove('active');
+                    }
+                });
 
-    <footer id="contact" class="section">
-        <div class="container">
-            <p>Ready to unlock a new, stable revenue stream? Stop leaving money on the table.</p>
-            <a href="mailto:partnerships@fullcirclemerch.com" class="cta-button">Let's Discuss Your Channel Today</a>
-            <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">Contact: partnerships@fullcirclemerch.com</p>
-        </div>
-    </footer>
+                // Toggle current
+                parent.classList.toggle('active');
+            });
+        });
 
+        // Smooth Scroll for Anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
